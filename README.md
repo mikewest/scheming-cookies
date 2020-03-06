@@ -11,10 +11,11 @@ modifying user state that flows to secure origins.
 Cookies' [`Secure` attribute][secure-attr] and the more recent [`__Secure-` prefix][secure-prefix]
 mitigate this problem by ensuring that a given cookie will never be leaked to the network, and by
 making it more difficult for the network to manipulate its value. Unfortunately, more than a decade
-after it's introduction only ~33.58% of cookies are declared with that attribute set. Though it's
-likely that number will continue to trend upward, due in part to user agents' imposition of [new
-requirements on cookies delivered in third-party contexts][samesite-secure], it's unlikely to reach
-100%, meaning that users will remain vulnerable.
+after it's introduction only ~33.58% of cookies are declared with that attribute set. Similarly,
+only ~0.18% of cookies carry a `__Secure-` prefix. Though it's likely both numbers will continue to
+trend upward, due in part to user agents' imposition of [new requirements on cookies delivered in
+third-party contexts][samesite-secure], it's unlikely to reach 100%, meaning that users will
+remain vulnerable.
 
 [pervasive-monitoring]: https://tools.ietf.org/html/rfc7258
 [PREF-cookie]: https://www.eff.org/deeplinks/2013/12/nsa-turns-cookies-and-more-surveillance-beacons
