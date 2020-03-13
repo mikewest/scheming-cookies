@@ -25,7 +25,7 @@ remain vulnerable.
 
 ## A Proposal
 
-Two changes to cookies could allow us to more robustly insulate secure origins from the network:
+Three changes to cookies could allow us to more robustly insulate secure origins from the network:
 
 1.  **Cookies will be associated with the scheme of the origin from which they're set.** That is,
     cookies set from a given scheme will only be delivered back to that scheme, preventing
@@ -36,8 +36,15 @@ Two changes to cookies could allow us to more robustly insulate secure origins f
 2.  **Cookies associated with a non-secure scheme will be evicted when a user's session ends**,
     thereby reducing the timespan over which a user broadcasts a stable identifier to the network.
 
+3.  **The lifetime of a "session" on a given site will be more tightly defined.** To avoid
+    [surprisingly long-lived][session-lifetime] non-secure cookies after the change in #2 above, we
+    can more reasonably define session cookies' expected lifetime to match user expectations.
+
+
 Together, these changes would harden our protections for secure origins, insulating them from the
 network. Each deserves a bit more examination.
+
+[session-lifetime]: https://textslashplain.com/2019/06/24/surprise-undead-session-cookies/
 
 ### Cookies' Scope
 
@@ -111,7 +118,7 @@ this model in stages. For example:
 
 1. User agents can announce the plan, and start poking at developers via devtools and other
    messaging channels. At the same time, user agents can start recording schemes for newly-set
-   cookies.
+   cookies, and change the definition of a "session" for all session cookies.
 
 2. To give developers a mechanism which would ensure that existing non-secure state isn't lost,
    user agents can introduce a new, temporary, `Sec-Nonsecure-Cookie` header, which delivers
