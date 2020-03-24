@@ -1,9 +1,12 @@
-# Scheming Cookies
+# Scheme-bound Cookies
 
 ## A Problem
 
-Data sent over plaintext HTTP is visible to and can be manipulated by anyone on the network. The
-exposure of identifiers like cookies is a particular risk, as it gives attackers both substantial
+Secure sites generally set cookies over secure channels, but (unlike every other storage mechanism
+the web offers) cookies don't respect schemes; securely-set cookies can be sent out with non-secure
+requests, and non-secure responses can set cookies which will be delivered along with subsequent
+secure requests. Since non-secure channels are visible to and can be manipulated by anyone on the
+network, the exposure of this data is a real risk, as it gives attackers both substantial
 [monitoring capability][pervasive-monitoring] (see the historical example of
 [Google's PREF cookie][PREF-cookie]), and the power to influence otherwise secured traffic by
 modifying user state that flows to secure origins.
