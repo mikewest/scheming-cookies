@@ -1,4 +1,4 @@
-# Scheme-bound Cookies
+# Scheme-Bound Cookies
 
 ## A Problem
 
