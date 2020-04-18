@@ -230,3 +230,9 @@ following table lays out the age in days at various percentiles:
 | 98%   | 677.1 | 754.5 |
 | 99%   | 761.8 | 823.2 |
 | 99.5% | 848.9 | 956.2 |
+
+This data comes from Chrome's telemetry, covering stable-channel users who opted into sharing
+usage statistics for the 28-day period ending December 31st, 2019. It's a fairly broad set of users,
+and we find it to be a relevant and representative measure. This histogram no longer exists in
+Chromium, as it served its purpose, but you can see how it was previously collected by examining
+[the historical implementation of `LogCookieUMA()`](https://source.chromium.org/chromium/chromium/src/+/master:net/url_request/url_request_http_job.cc;drc=9fb497f41bde7ed4fb3a340b53452a7a0a2dfa55;l=203?originalUrl=https:%2F%2Fcs.chromium.org%2F).
