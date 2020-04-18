@@ -180,10 +180,10 @@ limited to those times in which they're actively in use.
 
 ### The Sec-Nonsecure-Cookie header is weird. Can we do better?
 
-The assumption I'm making here is that developers will not react to public announcements, mailing
-list threads, blog posts, Lighthouse scores, devtool warnings, or etc. That's been our experience
-with many deprecations over the years; it is simply difficult to get a message out to a zillion
-developers.
+The assumption I'm making here is that a subset of developers will not react to public announcements,
+mailing list threads, blog posts, Lighthouse scores, devtool warnings, or etc. That's been our
+experience with many deprecations over the years; it is simply difficult to get a message out to
+_all_ developers.
 
 Given that assumption, `Sec-Nonsecure-Cookie` aims to create an intermediate step between "The
 `Cookie` header has all my state!" and "Um. Where'd my state go?!", giving developers an opportunity
